@@ -1,5 +1,6 @@
 package anna.backend.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -19,6 +20,9 @@ public class Event {
     private String imageUrl;
 
     @ManyToMany
+    @JoinTable(name = "event_artist",
+            joinColumns = @JoinColumn(name = "event_id"),
+            inverseJoinColumns = @JoinColumn(name = "artist_id"))
     private List<Artist> artists;
 
 }

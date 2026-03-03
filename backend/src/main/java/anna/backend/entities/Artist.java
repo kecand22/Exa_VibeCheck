@@ -1,5 +1,6 @@
 package anna.backend.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -17,6 +18,7 @@ public class Artist {
     private String imageUrl;
 
     @ManyToMany
+    @JsonIgnore
     private List<Event> events;
 
 }
