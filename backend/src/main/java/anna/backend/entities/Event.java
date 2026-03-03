@@ -25,4 +25,7 @@ public class Event {
             inverseJoinColumns = @JoinColumn(name = "artist_id"))
     private List<Artist> artists;
 
+
+    private List<Rating> ratings;
+
 }
