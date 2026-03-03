@@ -1,9 +1,7 @@
 package anna.backend.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -17,4 +15,9 @@ public class Rating {
     private Integer stars;
     private String comment;
     private LocalDateTime createdAt;
+
+
+    @ManyToOne
+    @JsonIgnore
+    private Event event;
 }
