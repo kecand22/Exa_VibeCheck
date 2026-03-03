@@ -26,6 +26,10 @@ public class Event {
     private List<Artist> artists;
 
 
+    @OneToMany(
+            mappedBy = "event",
+            cascade = CascadeType.ALL
+    )
     private List<Rating> ratings;
 
 }
