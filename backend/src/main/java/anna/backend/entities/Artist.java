@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -17,7 +18,7 @@ public class Artist {
     private String description;
     private String imageUrl;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "artists")
     @JsonIgnore
     private List<Event> events;
 
