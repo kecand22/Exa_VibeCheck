@@ -18,14 +18,15 @@ const EventCard: React.FC<EventCardProps> = ({event}) => {
         let sum = 0;
         event.ratings.forEach(r => sum += r.stars);
 
-        setAverage(sum / event.ratings.length);
+        setAverage(event.ratings.length ? sum / event.ratings.length : 0);
     }, [event]);
 
 
     return (
         <>
             <Card sx={{ maxWidth: 345 }}
-                  onClick={() => navigate(`/events/${event.eventId}/`)}>
+                  onClick={() => {
+                      console.log(event.eventId); navigate(`/events/${event.eventId}`)}}>
                 <CardMedia
                     sx={{ height: 140 }}
                     image={event.imageUrl}

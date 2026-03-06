@@ -7,7 +7,7 @@ import RatingForm from "../pages/RatingForm.tsx";
 
 const EventDetailPage: FC = () => {
 
-    const { eventId } = useParams();
+    const { eventId } = useParams<{ eventId: string }>();
     const [event, setEvent] = useState<EventModel | undefined>();
 
     useEffect(() => {
@@ -16,8 +16,8 @@ const EventDetailPage: FC = () => {
                 const e = events.find(ev => ev.eventId === Number(eventId));
                 setEvent(e);
             });
-    }, []);
-
+    }, [eventId]);
+    console.log(event)
     if (!event) {
         return <div>Loading...</div>;
     }

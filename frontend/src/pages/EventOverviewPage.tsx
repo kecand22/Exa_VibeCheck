@@ -3,7 +3,6 @@ import {Grid} from "@mui/material";
 import {useAppStore} from "../store/appstore.ts";
 import {BackendService} from "../services/BackendService.ts";
 import EventCard from "../components/EventCard.tsx";
-import type {EventModel} from "../models/EventModel.ts";
 
 const EventOverviewPage: React.FC = () => {
 
@@ -13,16 +12,17 @@ const EventOverviewPage: React.FC = () => {
         BackendService.loadAllEvents()
             .then(e => {
                 setEvents(
-                    e.map(ev => {
-                        const newEvent: EventModel = {
-                            ...ev,
-                            eventDate: new Date(ev.eventDate)
-                        };
-
-                        return newEvent;
-                    })
+                    e.map(ev => ({
+                        eventId: ev.eventId,
+                        title: ev.title,
+                        location: ev.location,
+                        imageUrl: ev.imageUrl,
+                        eventDate: new Date(ev.eventDate),
+                        artists: ev.artists,
+                        ratings: ev.ratings
+                    }))
                 );
-            })
+            });
     }, []);
     return (
         <>
