@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -13,8 +12,8 @@ public class Artist {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long artistId;
-    private String firstname;
-    private String lastname;
+    private String firstName;
+    private String lastName;
     private String description;
     private String imageUrl;
 
