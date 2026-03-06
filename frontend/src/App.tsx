@@ -40,7 +40,7 @@ function App(): ReactElement {
                 <Route path={"/"} element={<ArtistOverviewPage />} />
                 <Route path={"artists"} element={<ArtistOverviewPage />} />
                 <Route path={"events"} element={<EventOverviewPage />} />
-                <Route path="/events/:eventId" element={<EventDetailPage />} />
+                <Route path={"events/:eventId"} element={<EventDetailPage />} />
             </Routes>
         </div>
     )
