@@ -6,15 +6,12 @@ import anna.backend.entities.Event;
 import anna.backend.repositories.ArtistRepository;
 import anna.backend.repositories.EventRepository;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
@@ -69,7 +66,7 @@ public class DbInit implements ApplicationRunner {
                                     String firstname = tokens[0];
                                     String lastname = tokens[1];
 
-                                    return this.artistRepository.getArtistsByFirstnameAndLastname(firstname, lastname);
+                                    return this.artistRepository.getArtistsByFirstNameAndLastName(firstname, lastname);
                                 })
                                 .filter(Optional::isPresent)
                                 .map(Optional::get)
