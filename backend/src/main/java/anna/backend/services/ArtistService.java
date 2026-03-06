@@ -27,8 +27,8 @@ public class ArtistService {
         allArtists.forEach(a->
                 dtoArtist.add(new ArtistDto(
                         a.getArtistId(),
-                        a.getFirstname(),
-                        a.getLastname(),
+                        a.getFirstName(),
+                        a.getLastName(),
                         a.getDescription(),
                         a.getImageUrl()
                 )));
@@ -45,8 +45,8 @@ public class ArtistService {
 
         ArtistDto dto = new ArtistDto(
                 a.getArtistId(),
-                a.getFirstname(),
-                a.getLastname(),
+                a.getFirstName(),
+                a.getLastName(),
                 a.getDescription(),
                 a.getImageUrl()
         );
