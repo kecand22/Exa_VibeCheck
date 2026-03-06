@@ -1,5 +1,6 @@
 package anna.backend.entities;
 
+import anna.backend.dto.RatingDto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -20,4 +21,13 @@ public class Rating {
     @ManyToOne
     @JsonIgnore
     private Event event;
+
+    public RatingDto toDTO() {
+        return new RatingDto(
+                this.ratingId,
+                this.stars,
+                this.comment,
+                this.createdAt
+        );
+    }
 }
