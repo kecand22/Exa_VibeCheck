@@ -6,6 +6,7 @@ import ArtistOverviewPage from "./pages/ArtistOverviewPage.tsx";
 
 import EventOverviewPage from "./pages/EventOverviewPage.tsx";
 import {AppBar, Box, Button, IconButton, Toolbar, Typography} from "@mui/material";
+import EventDetailPage from "./pages/EventDetailPage.tsx";
 
 function App(): ReactElement {
     const navigate = useNavigate();
@@ -39,6 +40,7 @@ function App(): ReactElement {
                 <Route path={"/"} element={<ArtistOverviewPage />} />
                 <Route path={"artists"} element={<ArtistOverviewPage />} />
                 <Route path={"events"} element={<EventOverviewPage />} />
+                <Route path="/events/:eventId" element={<EventDetailPage />} />
             </Routes>
         </div>
     )
