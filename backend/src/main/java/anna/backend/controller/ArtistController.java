@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @RestController
 @RequestMapping("api/artists")
+@CrossOrigin(origins = "http://localhost:5173")
 public class ArtistController {
     private final ArtistService artistService;
 
