@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -16,7 +17,7 @@ public class Event {
     private Long eventId;
     private String title;
     private String location;
-    private LocalDate eventDate;
+    private Date eventDate;
     private String imageUrl;
 
     @ManyToMany
