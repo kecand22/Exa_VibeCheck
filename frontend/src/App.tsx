@@ -1,35 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+import {type ReactElement} from "react";
+import {Route, Routes, useNavigate} from "react-router";
+import ArtistOverviewPage from "./pages/ArtistOverviewPage.tsx";
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+import EventOverviewPage from "./pages/EventOverviewPage.tsx";
+import {AppBar, Box, Button, IconButton, Toolbar, Typography} from "@mui/material";
+
+function App(): ReactElement {
+    const navigate = useNavigate();
+    return (
+        <div>
+            <Box sx={{ flexGrow: 1 }}>
+                <AppBar position="static">
+                    <Toolbar>
+                        <IconButton
+                            size="large"
+                            edge="start"
+                            color="inherit"
+                            aria-label="menu"
+                            sx={{ mr: 2 }}
+                        >
+
+                        </IconButton>
+                        <h2>VibeCheck</h2>
+                        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}
+                                    onClick={() => navigate("/events")}>
+                            Events
+
+                        </Typography>
+                        <Button color="inherit"
+                                onClick={() => navigate("/artists")}>Artists</Button>
+                    </Toolbar>
+                </AppBar>
+            </Box>
+
+            <Routes>
+                <Route path={"/"} element={<ArtistOverviewPage />} />
+                <Route path={"artists"} element={<ArtistOverviewPage />} />
+                <Route path={"events"} element={<EventOverviewPage />} />
+            </Routes>
+        </div>
+    )
 }
 
 export default App
