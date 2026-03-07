@@ -29,6 +29,7 @@ public class EventService {
 
         return events.stream()
                 .map(e -> new EventDto(
+                        e.getEventId(),
                         e.getTitle(),
                         e.getLocation(),
                         e.getEventDate(),
@@ -47,6 +48,7 @@ public class EventService {
         }
 
         EventDto dto = new EventDto(
+                e.getEventId(),
                 e.getTitle(),
                 e.getLocation(),
                 e.getEventDate(),
@@ -69,6 +71,7 @@ public class EventService {
 
         return events.stream()
                 .map(e -> new EventDto(
+                        e.getEventId(),
                         e.getTitle(),
                         e.getLocation(),
                         e.getEventDate(),
