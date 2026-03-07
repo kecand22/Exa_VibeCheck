@@ -26,7 +26,7 @@ const EventCard: React.FC<EventCardProps> = ({event}) => {
         <>
             <Card sx={{ maxWidth: 345 }}
                   onClick={() => {
-                      console.log(event.eventId); navigate(`/events/${event.eventId}`)}}>
+                      console.log(event.title); navigate(`/events/${event.eventId}`)}}>
                 <CardMedia
                     sx={{ height: 140 }}
                     image={event.imageUrl}
