@@ -21,6 +21,7 @@ import java.util.List;
 //      { "stars": 5, "comment": "Beautiful and emotional.", "createdAt": "2025-07-04T09:00:00" }
 //    ]
 public class EventDto {
+    private Long eventId;
     private String title;
     private String location;
     private Date eventDate;
